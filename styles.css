@@ -1,0 +1,225 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    background-image: url('./re.jpg');
+    background-size: cover; /* Para cobrir todo o elemento */
+    background-attachment: fixed; /* Mantém a imagem fixa ao rolar */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
+    margin: 0;
+    padding: 10px;
+}
+#search-btn{
+    padding: 5px;
+    border-radius: 5px;
+    margin-left: 10px;
+    border: none;
+    background-color: rgba(4, 135, 242, 0.615);
+}
+#search{
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+.container {
+    max-width: 1200px; /* Aumente a largura máxima se necessário */
+    margin: auto;
+}
+
+.card-container {
+    display: grid; /* Use grid para layout em grade */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste para várias colunas */
+    gap: 20px; /* Espaço entre os cartões */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.767);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ff0000;
+    padding: 10px; /* Adiciona algum espaçamento */
+}
+
+.button:hover {
+    color: #37fc06;
+}
+
+h1 {
+    color: white;
+    text-align: center; /* Centraliza o título */
+}
+#favorites {
+    width: 200px;
+    height: 100%;
+    gap: 10px;
+}
+#padd-pesquisa {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.799); 
+    width: 300px; 
+    height: 100px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 300px;
+    align-items: center;
+    justify-content: center;
+    display: block;
+    font-size: 10px;
+    border: none;
+}
+#favorites-toggle{
+    background-color: rgb(241, 5, 5);  
+    border-radius: 10px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: -20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+}
+
+/* Estilos para o modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.8); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* Centraliza verticalmente */
+    padding: 50px;
+    width: 10%; /* Largura do modal */
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(31, 217, 223, 0.5);  
+    border: 5px solid rgba(31, 217, 223, 0.5); 
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 360px) {
+    .modal-content {
+        width: 80%; /* Largura do modal em telas menores */
+        height: 20%; /* Altura do modal em telas menores */
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .modal-content {
+        width: 60%; /* Largura do modal em telas menores */
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .modal-content {
+        width: 80%; /* Largura do modal em telas maiores */
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+    .modal-content {
+        width: 80%; /* Largura do modal em telas maiores */
+    }
+    #padd-pesquisa{
+        width: 300px;
+        height: 100px;
+        margin-top: 400px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+    .modal-content {
+        width: 60%; /* Largura do modal em telas maiores */
+        margin-top: 30%;
+    }
+    #padd-pesquisa{
+        width: 300px;
+        height: 100px;
+        margin-top: 400px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+    .modal-content {
+        width: 60%; /* Largura do modal em telas maiores */
+        margin-top: 30%;
+    }
+    #padd-pesquisa{
+        width: 300px;
+        height: 100px;
+        margin-top: 400px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 1920px) and (max-width: 2560px) {
+    .modal-content {
+        width: 60%; /* Largura do modal em telas maiores */
+        margin-top: 20%;
+        padding: 70px;
+    }
+    #padd-pesquisa{
+        width: 300px;
+        height: 100px;
+        margin-top: 400px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    .modal-content {
+        width: 60%; /* Largura do modal em telas maiores */
+        margin-top: 20%;
+        padding: 70px;
+    }
+    #padd-pesquisa{
+        width: 300px;
+        height: 100px;
+        margin-top: 200px;
+        padding: 10px;
+        font-size: 10px;
+    }
+}
+
+
+
