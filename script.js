@@ -19,16 +19,16 @@ const statusTranslations = {
 
 // Função para buscar personagens
 async function fetchCharacters(query = '') {
-    const response = await fetch(`${API_URL}?name=${query}`);
+    const response = await fetch(`${API_URL}?name=${query}`); // await pausa a promise para ver a resposta dela.
     const data = await response.json();
     displayCharacters(data.results);
 }
 
 // Função para exibir personagens
-function displayCharacters(characters) {
+function displayCharacters(characters) { //exibe um caractere dentro da pagina html
     cardsContainer.innerHTML = ''; // Limpa o container
     if (characters) {
-        characters.forEach(character => {
+        characters.forEach(character => { //forEach em JavaScript é utilizado para executar uma função em cada elemento de um array. 
             const card = document.createElement('div');
             card.className = 'card';
             const isFavorite = checkIfFavorite(character.id);
@@ -65,7 +65,7 @@ closeModalBtn.onclick = function () {
 
 // Fecha o modal ao clicar fora dele
 window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target == modal) {//target retorna o elemento que disparou o evento
         modal.style.display = 'none';
     }
 }
@@ -90,7 +90,7 @@ function toggleFavorite(id) {
 }
 
 // Função para exibir favoritos
-async function displayFavorites() {
+async function displayFavorites() {//async permite que você escreva código assíncrono de maneira mais simples e legível
     favoritesContainer.innerHTML = ''; // Limpa o container
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     
